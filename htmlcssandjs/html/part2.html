@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Full Stack Assessment 1">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="Joao Lucio Rolim de Moraes">
+  <style>
+  fieldset{
+    background:lightyellow;
+    border: 10px solid yellow;
+    margin-bottom: 10px;
+    width: 720px;
+  }
+  label{
+    width: 180px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+  }
+  textarea{
+    width:360px;
+    height:50px;
+  }
+  span{
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+    color: white;
+  }
+  .checkboxes{
+    width: auto;
+  }
+  .before{
+    background: brown;
+  }
+  .after{
+    background: purple;
+  }
+  .position{
+    position: absolute;
+  }
+</style>
+</head>
+<body>
+<h1>Please Enter Your Details For Our Dating Website!</h1>
+<form method="post" enctype="multipart/form-data" action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
+<fieldset>
+  <legend> Your face</legend>
+  <label for="avatar">Your Image:</label>
+  <input type="file" id="avatar" name="avatar" required>
+  <br>
+  <label for="birthday">Image Preview:<img id="preview"></label>
+</fieldset>
+<fieldset>
+  <legend> Your General Details</legend>
+  <label for="name">Name:</label>
+  <input type="text" name="name" placeholder="Your full name">
+  <br>
+  <label for="gender">Gender:</label>
+  <input type="radio" name="gender" value="male" class="checkboxes" required>Male
+  <input type="radio" name="gender" value="female" class="checkboxes">Female
+  <br>
+  <label for="age">Age:</label>
+  <input type="number" min="0" max="99" step="1" value="18" id="age" name="age" required><br>
+  <label for="birthday">Date of birth:</label>
+  <input type="date" id="birthday" name="birthday">
+  <br>
+  <label for="color">Your favorite color:</label>
+  <input type="color" id="color" name="color">
+  <br>
+  <label for="countries">Which Country:</label>
+	<select name="countries">
+		<option value="noselection">no selection</option>
+		<option value="newzealand">New Zealand</option>
+		<option value="canada">Canada</option>
+    <option value="brazil">USA</option>
+    <option value="newzealand">England</option>
+    <option value="canada">Brazil</option>
+	</select>
+  <br>
+</fieldset>
+<fieldset>
+  <legend> Your Indicators</legend>
+  <label for="height">Height:</label>
+  <span class="before"> Short </span> <input type="range" min="0" max="100" step="5" value="50" id="height" name="height"> <span class="after"> Tall </span>
+  <br>
+  <label for="salary">Salary:</label>
+  <span class="before"> Poor </span> <input type="range" min="0" max="100" step="5" value="50" id="salary" name="salary"> <span class="after"> Rich </span>
+  <br>
+</fieldset>
+<fieldset>
+  <legend> Your Contact Information</legend>
+  <label for="email">Email:</label>
+  <input type="email" name="email" required>
+  <br>
+  <label for="mobile">Mobile:</label>
+  <input type="tel" name="mobile">
+  <br>
+  <label for="address">Address:</label>
+  <textarea name="address" ></textarea>
+  <br>
+  Method to contact you:
+  <input type="checkbox" name="email" value="email" class="checkboxes">Email
+  <input type="checkbox" name="whatsapp" value="whatsapp" class="checkboxes"> Whatsapp
+  <input type="checkbox" name="inappchat" value="inappchat" class="checkboxes">In-app Chat
+  <br>
+</fieldset>
+<input type="submit" name="fileToUpload" value="Submit!">
+</form>
+</body>
+</html>
