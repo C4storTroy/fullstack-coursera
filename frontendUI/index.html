@@ -62,20 +62,21 @@
           Contact</i></a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
-           <li><a data-toggle="modal" data-target="#loginModal">
+           <!-- Task 1: Removing data-* attributes from Login link-->
+           <li><a id="login" href="#loginModal">
              <span class="glyphicon glyphicon-log-in"></span> Login</a>
            </li>
          </ul>
 </div>
 </div>
 </nav>
-<!-- WEEK 3: Modal introdution -->
+<!-- WEEK 4: Modal modifying -->
 <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <button id="cancelLogin1" type="button" class="close">&times;</button>
             <h4 class="modal-title">Login </h4>
         </div>
         <div class="modal-body">
@@ -96,7 +97,7 @@
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-info btn-sm">Sign in</button>
-                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+                <button id="cancelLogin" type="button" class="btn btn-default btn-sm">Cancel</button>
             </div>
           </form>
         </div>
@@ -109,7 +110,7 @@
   <!-- Modal content-->
    <div class="modal-content">
     <div class="modal-header">
-     <button type="button" class="close" data-dismiss="modal">&times;</button>
+     <button id="cancelReserve1" type="button" class="close">&times;</button>
     <h3 align="center">Reserve a Table</h3>
   </div>
   <div class="modal-body">
@@ -162,7 +163,7 @@
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-primary">Reserve</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button id="cancelReserve" class="btn btn-default">Cancel</button>
         </div>
       </div>
       <div class="form-group">
@@ -197,10 +198,11 @@
                   <p style="padding:20px;"></p>
                     <img src="img/logo.png" class="img-responsive">
                 </div>
-                <!-- Task 2: Inserting a button to Reserve-->
-                <div class="col-xs-12 col-sm-2">
+                <!-- Task 1: Removing data-* attributes from Reserve Table button-->
+                <div class="col-xs-12 col-sm-2" id="resButton">
                   <p style="padding:40px;"></p>
-                  <a type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserve"> Reserve Table </a>
+                  <a type="button" class="btn btn-warning btn-block" href="#reserve">
+                    Reserve Table</a>
                 </div>
                 <!-- Task 2: Ending-->
             </div>
@@ -356,9 +358,6 @@
               </div>
             </div>
         </div>
-        <!-- Task 3: Inserting a form to guests -->
-
-        <!-- Task 3: End -->
     </div>
     <footer class="row-footer">
         <div class="container">
@@ -405,5 +404,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+<script>
+/*Showing a modal via javascript code for logindmodal and reserve modal
+The following codes are based in
+http://getbootstrap.com/javascript/#modals
+i.e:
+$('#myModal').modal(options)
+$('#myModal').modal('toggle')
+$('#myModal').modal('show')
+$('#myModal').modal('hide')
+*/
+//Task 2: reserve
+           $("#reserve").modal({
+               show: false
+           });
+           $("#resButton").click(function(){
+               $("#reserve").modal('toggle')
+           });
+           $("#cancelReserve").click(function(){
+               $("#reserve").modal('hide')
+           });
+           $("#cancelReserve1").click(function(){
+               $("#reserve").modal('hide')
+           });
+//Task 3: login
+           $("#loginModal").modal({
+               show: false
+           });
+           $("#login").click(function(){
+               $("#loginModal").modal('toggle')
+           });
+           $("#cancelLogin").click(function(){
+               $("#loginModal").modal('hide')
+           });
+           $("#cancelLogin1").click(function(){
+               $("#loginModal").modal('hide')
+           });
+
+
+  </script>
 </body>
 </html>
